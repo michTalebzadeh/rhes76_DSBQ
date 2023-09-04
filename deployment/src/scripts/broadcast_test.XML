@@ -1,0 +1,123 @@
+<sms_requests>
+<sms_request>
+<sms_campaign_code>TRM09</sms_campaign_code>
+<target_mobile_no>765908711</target_mobile_no>
+<sms_template_code>C19BCSM</sms_template_code>
+<sms_request_external_ref>43561234</sms_request_external_ref>
+<sms_request_external_txn_ref>654787653219</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>MBN</brand_code>
+  <ocis_mrg_pty_id>5437687691</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM06</sms_campaign_code>
+<target_mobile_no>9876543210</target_mobile_no>
+<sms_template_code>C19BCSQ</sms_template_code>
+<sms_request_external_ref>76432178</sms_request_external_ref>
+<sms_request_external_txn_ref>856432987541</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>LTB</brand_code>
+  <ocis_mrg_pty_id>7863421239</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM06</sms_campaign_code>
+<target_mobile_no>9965438761</target_mobile_no>
+<sms_template_code>C19BCSQ</sms_template_code>
+<sms_request_external_ref>43561234</sms_request_external_ref>
+<sms_request_external_txn_ref>754321678985</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>MBN</brand_code>
+  <ocis_mrg_pty_id>5437687691</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM04</sms_campaign_code>
+<target_mobile_no>7760987652</target_mobile_no>
+<sms_template_code>C19BCSD</sms_template_code>
+<sms_request_external_ref>87612348</sms_request_external_ref>
+<sms_request_external_txn_ref>654787653219</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>LTB</brand_code>
+  <ocis_mrg_pty_id>1111165498</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM01</sms_campaign_code>
+<target_mobile_no>7654398793</target_mobile_no>
+<sms_template_code>C19BCSD</sms_template_code>
+<sms_request_external_ref>89745287</sms_request_external_ref>
+<sms_request_external_txn_ref>856432987541</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>LTB</brand_code>
+  <ocis_mrg_pty_id>8765098543</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM09</sms_campaign_code>
+<target_mobile_no>7786098111</target_mobile_no>
+<sms_template_code>C19BCSF</sms_template_code>
+<sms_request_external_ref>98654123</sms_request_external_ref>
+<sms_request_external_txn_ref>876098732167</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>HAL</brand_code>
+  <ocis_mrg_pty_id>7609876543</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM03</sms_campaign_code>
+<target_mobile_no>9965438761</target_mobile_no>
+<sms_template_code>C19BCSF</sms_template_code>
+<sms_request_external_ref>87612348</sms_request_external_ref>
+<sms_request_external_txn_ref>453987654129</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>BOS</brand_code>
+  <ocis_mrg_pty_id>7609876543</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM03</sms_campaign_code>
+<target_mobile_no>7658761121</target_mobile_no>
+<sms_template_code>C19BCSM</sms_template_code>
+<sms_request_external_ref>54986541</sms_request_external_ref>
+<sms_request_external_txn_ref>754321678985</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>BOS</brand_code>
+  <ocis_mrg_pty_id>1098765432</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM04</sms_campaign_code>
+<target_mobile_no>7654398793</target_mobile_no>
+<sms_template_code>C19BCSM</sms_template_code>
+<sms_request_external_ref>43561234</sms_request_external_ref>
+<sms_request_external_txn_ref>765487612387</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>BOS</brand_code>
+  <ocis_mrg_pty_id>7863421239</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM08</sms_campaign_code>
+<target_mobile_no>9965438761</target_mobile_no>
+<sms_template_code>C19BCSL</sms_template_code>
+<sms_request_external_ref>57326660</sms_request_external_ref>
+<sms_request_external_txn_ref>453987654129</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>LTB</brand_code>
+  <ocis_mrg_pty_id>8798543217</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+<sms_request>
+<sms_campaign_code>TRM05</sms_campaign_code>
+<target_mobile_no>7654398793</target_mobile_no>
+<sms_template_code>C19BCSH</sms_template_code>
+<sms_request_external_ref>43561234</sms_request_external_ref>
+<sms_request_external_txn_ref>654987654312</sms_request_external_txn_ref>
+<sms_template_variables>
+  <brand_code>MBN</brand_code>
+  <ocis_mrg_pty_id>5437687691</ocis_mrg_pty_id>
+</sms_template_variables>
+</sms_request>
+</sms_requests>

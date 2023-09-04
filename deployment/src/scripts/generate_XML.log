@@ -1,0 +1,2 @@
+Sun Aug 30 11:41:09 BST 2020  ======= Started creating 10 rows of test XML broadcast data =======
+Sun Aug 30 11:41:10 BST 2020  ======= Abort could not copy the sample xml file .//broadcast_test.XML into hdfs://shared-pas-08.sandbox.local:8020/tmp directory ======
