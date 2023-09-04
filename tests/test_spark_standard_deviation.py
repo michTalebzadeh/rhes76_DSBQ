@@ -1,16 +1,16 @@
 # Import necessary modules and libraries
 import sys
-sys.path.append('/home/hduser/dba/bin/python/DSBQ/')
-sys.path.append('/home/hduser/dba/bin/python/DSBQ/conf')
-sys.path.append('/home/hduser/dba/bin/python/DSBQ/othermisc')
-sys.path.append('/home/hduser/dba/bin/python/DSBQ/src')
-sys.path.append('/home/hduser/dba/bin/python/DSBQ/tests')
+#sys.path.append('/home/hduser/dba/bin/python/DSBQ/')
+#sys.path.append('/home/hduser/dba/bin/python/DSBQ/conf')
+#sys.path.append('/home/hduser/dba/bin/python/DSBQ/othermisc')
+#sys.path.append('/home/hduser/dba/bin/python/DSBQ/src')
+#sys.path.append('/home/hduser/dba/bin/python/DSBQ/tests')
 
 import pytest
 import math
 from pyspark.sql import SparkSession
 from pyspark import SparkContext
-from spark_standard_deviation import SparkStandardDeviationCalculator
+from src.spark_standard_deviation import SparkStandardDeviationCalculator
 
 # This fixture sets up the Spark session and context for testing
 @pytest.fixture(scope="module")
