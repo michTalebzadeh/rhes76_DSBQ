@@ -4,14 +4,13 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS = credentials('your-credential-id') // Use the ID you provided for the credential
         GITHUB_API_URL = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls"
-}
     }
 
     stages {
         stage('Merge Pull Request') {
             steps {
                 script {
-                    def prNumber = 8 // Replace with the PR number you want to merge
+                    def prNumber = 9 // Replace with the PR number you want to merge
                     def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${prNumber}/merge"
 
                     def response = httpRequest(
