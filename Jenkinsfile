@@ -9,7 +9,7 @@ pipeline {
         stage('Merge Pull Request') {
             steps {
                 script {
-                    def prNumber = 2 // Replace with the PR number you want to merge
+                    def prNumber = 4 // Replace with the PR number you want to merge
                     def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${prNumber}/merge}/merge"
                     
                     def response = httpRequest(
