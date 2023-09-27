@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         GITHUB_CREDENTIALS = credentials('your-credential-id') // Use the ID you provided for the credential
+        GITHUB_API_URL = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls"
+}
     }
 
     stages {
