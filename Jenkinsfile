@@ -26,7 +26,7 @@ pipeline {
                     def response = httpRequest(
                         url: apiUrl,
                         httpMode: 'POST',
-                        authentication: 'GITHUB_credentials',
+                        authentication: 'GitHub_Credentials',
                         ignoreSslErrors: true
                     )
 
