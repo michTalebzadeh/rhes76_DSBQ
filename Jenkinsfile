@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     def prNumber = params.PR_NUMBER.toInteger()
-                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${prNumber}/merge"
+                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${params.PR_NUMBER}/merge"
 
                     def response = httpRequest(
                         url: apiUrl,
