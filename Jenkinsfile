@@ -7,7 +7,7 @@ pipeline {
         stage('Make HTTP Request') {
             steps {
                 script {
-                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/6/merge"
+                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${prNumber}/merge"
                     def response = sh(script: "curl -X POST $apiUrl", returnStatus: true)
                     if (response == 0) {
                         echo "HTTP request succeeded."
