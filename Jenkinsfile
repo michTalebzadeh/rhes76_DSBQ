@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'PR_NUMBER', defaultValue: '13', description: 'Pull Request Number to Merge')
+    }
     stages {
         stage('Make HTTP Request') {
             steps {
