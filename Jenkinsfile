@@ -1,16 +1,19 @@
 pipeline {
     agent any
-
-    parameters {
-        string(name: 'PR_NUMBER', defaultValue: '13', description: 'Pull Request Number to Merge')
-    }
-
-    environment {
-        GITHUB_CREDENTIALS = credentials('GitHub_Credentials') // Use the ID you provided for the credential
-        GITHUB_API_URL = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls"
-    }
-
     stages {
+        stage('Make HTTP Request') {
+            steps {
+                script {
+                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/6/merge"
+                    def response = sh(script: "curl -X POST $apiUrl", returnStatus: true)
+                    if (response == 0) {
+                        echo "HTTP request succeeded."
+                    } else {
+                        error("HTTP request failed with status code: ${response}")
+                    }
+                }
+            }
+        }
         stage('Merge Pull Request') {
             steps {
                 script {
