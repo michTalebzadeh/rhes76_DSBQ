@@ -11,7 +11,13 @@ pipeline {
             steps {
                 script {
                     def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${params.PR_NUMBER}/merge"
+                    echo "API URL: ${apiUrl}"
+
                     def response = sh(script: "curl -X POST $apiUrl -H 'Authorization: token ${GITHUB_TOKEN}'", returnStatus: true)
+                    echo "HTTP Response Code: ${response}"
+                    def responseBody = sh(script: "curl -X POST $apiUrl -H 'Authorization: token ${GITHUB_TOKEN}'", returnStdout: true).trim()
+                    echo "Response Body: ${responseBody}"
+                    
                     if (response == 0) {
                         echo "HTTP request succeeded."
                     } else {
