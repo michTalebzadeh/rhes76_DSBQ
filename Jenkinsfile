@@ -1,4 +1,4 @@
-peline {
+pipeline {
     agent any
     parameters {
         string(name: 'PR_NUMBER', defaultValue: '17', description: 'Pull Request Number to Merge')
