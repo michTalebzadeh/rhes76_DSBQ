@@ -1,13 +1,13 @@
-pipeline {
+peline {
     agent any
     parameters {
-        string(name: 'PR_NUMBER', defaultValue: '13', description: 'Pull Request Number to Merge')
+        string(name: 'PR_NUMBER', defaultValue: '17', description: 'Pull Request Number to Merge')
     }
     stages {
         stage('Make HTTP Request') {
             steps {
                 script {
-                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${prNumber}/merge"
+                    def apiUrl = "https://api.github.com/repos/michTalebzadeh/rhes76_DSBQ/pulls/${params.PR_NUMBER}/merge"
                     def response = sh(script: "curl -X POST $apiUrl", returnStatus: true)
                     if (response == 0) {
                         echo "HTTP request succeeded."
