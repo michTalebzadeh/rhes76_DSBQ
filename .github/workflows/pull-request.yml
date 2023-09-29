@@ -1,5 +1,5 @@
 name: Validate pull request before putting into queue
-
+run-name: ${{ github.actor }} is validating pull request 
 on:
   pull_request:
 
