@@ -14,7 +14,7 @@ def main():
     spark_context.setLogLevel("ERROR")
     print(spark_session)
     print(spark_context)
-    rdd = spark_context.parallelize([1,2,3,4,5,6,7,8,9,10]).distinct()
+    rdd = spark_context.parallelize([1,2,3,4,5,6,7,8,9,10,11]).distinct()
     rddCollect = rdd.collect()
     print("Number of Partitions: "+str(rdd.getNumPartitions()))
     print(rddCollect)
