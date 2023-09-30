@@ -1,4 +1,4 @@
-name: Validate pull code in the merge queue
+name: Validate pull code in the merge queue, sleep for 60 xec
 run-name: ${{ github.actor }} is validating code in the merge queue
 on:
   merge_group:
