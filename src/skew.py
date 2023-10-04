@@ -12,7 +12,7 @@ def main():
     spark_context = SparkContext.getOrCreate()
     spark_context.setLogLevel("ERROR")
     #df_uniform = spark.createDataFrame([i for i in range(10000000)], IntegerType())
-    df_uniform = spark.createDataFrame([i for i in range(100)], IntegerType())
+    df_uniform = spark.createDataFrame([i for i in range(1000)], IntegerType())
     df_uniform = df_uniform.withColumn("partitionId", spark_partition_id())
     print("Number of Partitions: "+str(df_uniform.rdd.getNumPartitions()))
     df_uniform.groupby([df_uniform.partitionId]).count().sort(df_uniform.partitionId).show(5)
