@@ -17,10 +17,10 @@ from pyspark.sql import functions as F
 import pyspark.sql.functions as F
 from decimal import getcontext, Decimal
 from datetime import datetime
-
+#
 def main():
     #appName = config['common']['appName']
-    appName = "batch"
+    appName = "mdbatch"
     spark_session = s.spark_session(appName)
     spark_session = s.setSparkConfStreaming(spark_session)
     spark_session = s.setSparkConfBQ(spark_session)

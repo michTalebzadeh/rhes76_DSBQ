@@ -7,10 +7,12 @@ import math
 import random
 import string
 """
-Generate test code in Python fot standard deviation
+Generate test code in Python for standard deviation
 """
 
 def main():
+    # run this with PySpark and pass the number of rows to generate
+    # example spark_standard_deviation.py 100 # generates 100 rowd
     # Get the number of rows to generate from command-line arguments
     rows_to_generate = int(sys.argv[1])  # Parameter passed as (i)
     
