@@ -1,0 +1,19 @@
+name: Validate pull code in the merge queue, sleep for 60 sec
+run-name: ${{ github.actor }} is validating code in the merge queue
+on:
+  merge_group:
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Display info
+      run: | 
+        pwd
+        tree -a -I '.git'
+        git status
+        git merge
+    - name: Run slow CI (emulated by a long sleep)
+      run: sleep 60
