@@ -17,10 +17,10 @@ from pyspark.sql import functions as F
 import pyspark.sql.functions as F
 from decimal import getcontext, Decimal
 from datetime import datetime
-
+#
 def main():
     #appName = config['common']['appName']
-    appName = "batch"
+    appName = "mdbatch"
     spark_session = s.spark_session(appName)
     spark_session = s.setSparkConfStreaming(spark_session)
     spark_session = s.setSparkConfBQ(spark_session)
@@ -41,12 +41,18 @@ def sendToSink(df, batchId):
         print("DataFrame md is empty")
 
 def sendToControl(dfnewtopic, batchId2):
+    queue = None  # Initialize queue with a default value
+    status = None  # Initialize status with a default value
     if(len(dfnewtopic.take(1))) > 0:
         print(f"""From sendToControl, newtopic batchId is {batchId2}""")
         dfnewtopic.show(100,False)
-        queue = dfnewtopic.first()[2]
-        status = dfnewtopic.first()[3]
-        print(f"""testing queue is {queue}, and status is {status}""") 
+        first_row = dfnewtopic.first()
+        if first_row is not None:
+          queue = first_row[2]  # Use square brackets [] to access elements of a tuple
+          status = first_row[3]
+          print(f"Testing queue is {queue}, and status is {status}")
+        else:
+          print("Skipping this row")
         spark_session = s.spark_session(config['common']['appName'])
         active = spark_session.streams.active
         for e in active:
