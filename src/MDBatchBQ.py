@@ -42,6 +42,7 @@ def sendToSink(df, batchId):
 
 def sendToControl(dfnewtopic, batchId2):
     queue = None  # Initialize queue with a default value
+    status = None  # Initialize status with a default value
     if(len(dfnewtopic.take(1))) > 0:
         print(f"""From sendToControl, newtopic batchId is {batchId2}""")
         dfnewtopic.show(100,False)
