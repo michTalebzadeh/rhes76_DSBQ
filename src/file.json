@@ -1,0 +1,122 @@
+{
+    "e8aecd9b-7f2a-48c1-b489-f6d928b01a79": {
+        "KEY": "e8aecd9b-7f2a-48c1-b489-f6d928b01a79",
+        "ID": 14100931,
+        "CLUSTERED": 1410093.0,
+        "SCATTERED": 14100930.0,
+        "RANDOMISED": 3.0,
+        "RANDOM_STRING": "ZDUWYNqgrUppDTjHTAeCyJCUikmaLkzIzcardaOATuwBQtCbpm",
+        "SMALL_VC": "14100931",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "b9cdbd8a-b5eb-4e94-85ab-52ba4bace84c": {
+        "KEY": "b9cdbd8a-b5eb-4e94-85ab-52ba4bace84c",
+        "ID": 14100932,
+        "CLUSTERED": 1410093.1,
+        "SCATTERED": 14100931.0,
+        "RANDOMISED": 8.0,
+        "RANDOM_STRING": "UbWIGTyvgFIwnAdMnPzUNLOTOaCEHGoneHYfhnyKqhaMmvpZZh",
+        "SMALL_VC": "14100932",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "b29f8293-94e6-4565-9156-ba8acb469c70": {
+        "KEY": "b29f8293-94e6-4565-9156-ba8acb469c70",
+        "ID": 14100933,
+        "CLUSTERED": 1410093.2,
+        "SCATTERED": 14100932.0,
+        "RANDOMISED": 3.0,
+        "RANDOM_STRING": "IwWyyLqSoZHFpBKYEvdpFJsMFKLEvfWfZlEwtWGdOwXyQhLZUg",
+        "SMALL_VC": "14100933",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "c0e3a187-0992-440c-947c-92e53daae4d5": {
+        "KEY": "c0e3a187-0992-440c-947c-92e53daae4d5",
+        "ID": 14100934,
+        "CLUSTERED": 1410093.3,
+        "SCATTERED": 14100933.0,
+        "RANDOMISED": 0.0,
+        "RANDOM_STRING": "vEmnxQXUptSdCahwVBZLomhFquHnRSfaEsJzAJoWESERZqEXjx",
+        "SMALL_VC": "14100934",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "aeaae50a-a9ab-4968-a801-9a6b1a05ef8c": {
+        "KEY": "aeaae50a-a9ab-4968-a801-9a6b1a05ef8c",
+        "ID": 14100935,
+        "CLUSTERED": 1410093.4,
+        "SCATTERED": 14100934.0,
+        "RANDOMISED": 8.0,
+        "RANDOM_STRING": "jrEzwXUziNRxZFuAAriHHGDDsrdSYITmuheTMMEsDENAkfpVng",
+        "SMALL_VC": "14100935",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "35420c30-7b8c-4b49-977d-3bae9a7b38ab": {
+        "KEY": "35420c30-7b8c-4b49-977d-3bae9a7b38ab",
+        "ID": 14100936,
+        "CLUSTERED": 1410093.5,
+        "SCATTERED": 14100935.0,
+        "RANDOMISED": 1.0,
+        "RANDOM_STRING": "TzDQBQKRciAZNIxKfMzSvVfAggxOWTaHJrlvbHtMEbdZkxhNHx",
+        "SMALL_VC": "14100936",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "052bbf9b-49e3-4f0f-ae3a-15ea9b1d8c4f": {
+        "KEY": "052bbf9b-49e3-4f0f-ae3a-15ea9b1d8c4f",
+        "ID": 14100937,
+        "CLUSTERED": 1410093.6,
+        "SCATTERED": 14100936.0,
+        "RANDOMISED": 6.0,
+        "RANDOM_STRING": "FnvVnQdaNvGvhadcEuQCerrULnmehYfVyemJNNbzFYTiOagiuM",
+        "SMALL_VC": "14100937",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "f6d93eaf-313a-4ea3-9a54-3b338c473129": {
+        "KEY": "f6d93eaf-313a-4ea3-9a54-3b338c473129",
+        "ID": 14100938,
+        "CLUSTERED": 1410093.7,
+        "SCATTERED": 14100937.0,
+        "RANDOMISED": 0.0,
+        "RANDOM_STRING": "ZOAvORrfmGZOzKSVNKhYlOOBkiZrOjXtEQPspaaoDYjvxvnrhW",
+        "SMALL_VC": "14100938",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "b12c955e-fc3b-42d5-b1d6-94fbb230cfca": {
+        "KEY": "b12c955e-fc3b-42d5-b1d6-94fbb230cfca",
+        "ID": 14100939,
+        "CLUSTERED": 1410093.8,
+        "SCATTERED": 14100938.0,
+        "RANDOMISED": 6.0,
+        "RANDOM_STRING": "vIXxRyJlFyxWKLmZjukkvvtAFtcZvriRiGPDgapRrLxccwXLgO",
+        "SMALL_VC": "14100939",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    },
+    "ac79edd3-b52d-48b4-a739-426cd54e1c38": {
+        "KEY": "ac79edd3-b52d-48b4-a739-426cd54e1c38",
+        "ID": 14100940,
+        "CLUSTERED": 1410093.9,
+        "SCATTERED": 14100939.0,
+        "RANDOMISED": 0.0,
+        "RANDOM_STRING": "rNVXiVBpgpPmDBVGQNPluhQXnCowIfngSsKNcvgbaCHWzTmbbX",
+        "SMALL_VC": "14100940",
+        "PADDING": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "op_type": "1",
+        "op_time": "2023-12-31 17:53:40"
+    }
+}

@@ -1,0 +1,151 @@
+from __future__ import print_function
+import sys
+import json
+from flask import Flask
+from flask_restful import Resource, Api
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import lit, col, current_timestamp
+from pyspark.sql.types import StringType
+from pyspark.sql.functions import udf
+import uuid
+from sparkutils import sparkstuff as s  # Assuming this module has the necessary Spark functions
+
+app = Flask(__name__)
+api = Api(app)
+
+class RandomDataResource(Resource):
+    def __init__(self):
+        super(RandomDataResource, self).__init__()
+        # Set the application name
+        appName = "RandomDataPysparkStreaming"
+
+        # Initialize Spark session and context
+        self.spark_session = s.spark_session(appName)
+        self.spark_session = s.setSparkConfStreaming(self.spark_session)
+        self.spark_session = s.setSparkConfBQ(self.spark_session)
+        self.spark_context = s.sparkcontext()
+        # Set the log level to ERROR to reduce verbosity
+        self.spark_context.setLogLevel("ERROR")
+
+        self.checkpoint_path = "file:///ssd/hduser/randomdata/chkpt"
+
+    def generate_random_data(self, numRows):
+        # ... (remaining code)
+       numRows = 10
+        processingTime = 2
+        rows = 0
+        values = self.getValuesFromBQTable()
+        rows = values["rows"]
+        maxID = values["maxID"]
+        start = 0
+        if rows == 0:
+            start = 1
+        else:
+            start = maxID + 1
+        end = start + numRows
+        print("starting at ID = ", start, ",ending on = ", end)
+        Range = range(start, end)
+        # Kafka producer requires a key, value pair. We generate UUID key as the unique identifier of Kafka record
+        # # This traverses through the Range and increment "x" by one unit each time, and that x value is used in the code to generate random data through Python functions in a class
+
+        rdd = self.sc.parallelize(Range). \
+            map(lambda x: (str(uuid.uuid4()),
+                           x, \
+                           uf.clustered(x, numRows), \
+                           uf.scattered(x, numRows),
+                           uf.randomised(x, numRows), \
+                           uf.randomString(50),
+                           uf.padString(x, " ", 50), \
+                           uf.padSingleChar("x", 50)))
+        # Convert RDD to DataFrame
+        df = rdd.toDF(["KEY", "ID", "CLUSTERED", "SCATTERED", "RANDOMISED", "RANDOM_STRING", "SMALL_VC", "PADDING"])
+
+        # Add metadata columns
+        df = df.withColumn("op_type", lit(config['MDVariables']['op_type'])). \
+            withColumn("op_time", current_timestamp())
+
+        # define checkpoint directory
+        checkpoint_path = "file:///ssd/hduser/randomdata/chkpt"
+
+        try:
+
+            # construct a streaming dataframe that subscribes to topic rate for data
+            streamingDataFrame = self.spark \
+                .readStream \
+                .format("rate") \
+                .option("rowsPerSecond", numRows) \
+                .option("auto.commit.interval.ms", config['MDVariables']['autoCommitIntervalMS']) \
+                .option("subscribe", "rate") \
+                .option("failOnDataLoss", "false") \
+                .option("includeHeaders", "true") \
+                .option("startingOffsets", "latest") \
+                .load() \
+                .withColumn("KEY", F.lit(str(uuid.uuid4()))) \
+                .withColumn("ID", F.col("value")) \
+                .withColumn("CLUSTERED", uf.clustered2(F.col("value"), numRows)) \
+                .withColumn("SCATTERED", F.abs((F.col("value") - 1) % numRows) * 1.0) \
+                .withColumn("RANDOMISED", uf.randomised2(F.col("value"), numRows)) \
+                .withColumn("RANDOM_STRING", udf(uf.randomString, StringType())(F.lit(50))) \
+                .withColumn("SMALL_VC", uf.padString2(col("value") + 1, 50, " ")) \
+                .withColumn("PADDING", self.padSingleChar2(lit("x"), lit(50))) \
+                .withColumn("op_type", lit(config['MDVariables']['op_type'])) \
+                .withColumn("op_time", F.current_timestamp())
+
+            """
+            In the context of Spark Structured Streaming with the "rate" source,
+            the schema of the streaming DataFrame includes two columns:
+
+            - timestamp: This column contains the timestamp associated with each generated record. It represents the time at which the record was generated.
+            - value: This column contains a long integer value associated with each record.          
+            """
+            streamingDataFrame.printSchema()
+
+            result = streamingDataFrame.select(\
+                col("timestamp").alias("timestamp") \
+                , col("value").alias("value") \
+                , col("KEY").alias("rowkey") \
+                , col("ID").alias("ID") \
+                , col("CLUSTERED").alias("CLUSTERED") \
+                , col("RANDOMISED").alias("RANDOMISED") \
+                , col("RANDOM_STRING").alias("RANDOM_STRING") \
+                , col("SMALL_VC").alias("SMALL_VC") \
+                , col("PADDING").alias("PADDING") \
+                , col("RANDOM_STRING").alias("RANDOM_STRING") \
+                , col("op_type").alias("op_type") \
+                , col("op_time").alias("op_time")). \
+                writeStream. \
+                outputMode('append'). \
+                option("truncate", "false"). \
+                foreachBatch(lambda df, batchId: rates(df, batchId)). \
+                trigger(processingTime=f'{processingTime} seconds'). \
+                option('checkpointLocation', checkpoint_path). \
+                queryName(f"{appName}"). \
+                start()
+            # print(result)
+
+        except Exception as e:
+            print(f"{str(e)}, quitting!")
+            sys.exit(1)
+
+
+    def create_streaming_dataframe(self, numRows):
+        # ... (remaining code)
+
+    def start_streaming(self, df, appName, numRows, processingTime):
+        # ... (remaining code)
+
+    def rates(self, df, batchId):
+        # ... (remaining code)
+
+    def main(self, numRows=10, processingTime=2):
+        dfRandom = self.generate_random_data(numRows)
+        streamingDataFrame = self.create_streaming_dataframe(numRows)
+        self.start_streaming(streamingDataFrame, "RandomDataPysparkStreaming", numRows, processingTime)
+
+# API endpoints
+api.add_resource(RandomDataResource, '/generate_random_data')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
