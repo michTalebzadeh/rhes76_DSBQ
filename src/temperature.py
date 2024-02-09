@@ -21,7 +21,7 @@ def f(a):
 def temperatures(df, batchId):
     if(len(df.take(1))) > 0:
         df.show(100,False)
-        df. persist()
+        df.persist()
         AvgTemp = df.select(round(F.avg(col("temperature")))).collect()[0][0]
         df.unpersist()
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")

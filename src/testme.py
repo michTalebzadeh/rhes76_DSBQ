@@ -16,8 +16,12 @@ def main():
     print(spark_context)
     rdd = spark_context.parallelize([1,2,3,4,5,6,7,8,9,10,11,12]).distinct()
     rddCollect = rdd.collect()
-    print("Number of Partitions: "+str(rdd.getNumPartitions()))
+    print("Number of Partitions: " + str(rdd.getNumPartitions()))
     print(rddCollect)
+    # Call toDF() with the explicit schema
+    schema = StructType([StructField("value", IntegerType())])
+    df = spark_session.createDataFrame(rdd.map(lambda x: (x,)), schema=schema)
+    df.explain("extended")
 
 if __name__ == "__main__":
   main()

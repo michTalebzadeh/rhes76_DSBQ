@@ -92,6 +92,7 @@ MDVariables:
   tickerWatch: "VOD"
   priceWatch: 300.0
   op_type: "1"
+  op_type_API: "GET"
   currency: GBP
   tickerType: "short"
   tickerClass: "asset"
